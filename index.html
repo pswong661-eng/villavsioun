@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Private infinity pool villa on the Nam Khan River. Wake up to monks floating by. Instant booking via Airbnb or WhatsApp."/>
+  <title>Villa Visoun - Namkhan Riverview Pool Villa | Luang Prabang</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {--gold:#d4a373;--dark:#2c1e18;--cream:#faf6f2;--wa:#25d366;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;}
+    h1,h2,h3{font-family:'Playfair Display',serif;color:var(--dark);}
+
+    /* WhatsApp Float */
+    .whatsapp-float{
+      position:fixed;bottom:25px;right:25px;width:62px;height:62px;
+      background:var(--wa);color:white;border-radius:50px;
+      text-align:center;font-size:34px;box-shadow:0 8px 30px rgba(37,211,102,0.5);
+      z-index:1000;transition:0.3s;display:flex;align-items:center;justify-content:center;
+    }
+    .whatsapp-float:hover{transform:scale(1.15);}
+    .whatsapp-float i{animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+    /* HERO – FIXED with AVIF + fallbacks */
+    .hero{
+      height:100vh;min-height:720px;
+      background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)), 
+                  url('hero.avif') center/cover no-repeat fixed;
+      background-size:cover;
+      background-position:center;
+      display:flex;align-items:center;justify-content:center;text-align:center;color:white;
+    }
+    /* Fallback for browsers that don’t support AVIF */
+    @supports not (background-image: url('hero.avif')) {
+      .hero {background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)), url('hero.jpg');}
+    }
+
+    .hero h1{font-size:5.8rem;margin-bottom:0.5rem;text-shadow:0 5px 20px rgba(0,0,0,0.8);}
+    .hero p{font-size:1.7rem;margin:1.5rem 0 2.5rem;font-weight:300;}
+    .btn{background:var(--gold);color:white;padding:1.2rem 3.2rem;border-radius:60px;
+         font-size:1.3rem;font-weight:600;box-shadow:0 15px 40px rgba(212,163,115,0.5);
+         transition:0.35s;display:inline-block;text-decoration:none;}
+    .btn:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(212,163,115,0.6);}
+
+    section{padding:120px 5%;text-align:center;}
+    .about{background:white;}
+    .highlight{font-size:1.35rem;max-width:900px;margin:30px auto;color:#444;}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;max-width:1600px;margin:0 auto;}
+    .gallery img{width:100%;height:340px;object-fit:cover;border-radius:16px;
+                 box-shadow:0 15px 40px rgba(0,0,0,0.14);transition:0.4s;}
+    .gallery img:hover{transform:scale(1.04);}
+
+    .reviews{background:#f8f4f0;}
+    .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;max-width:1300px;margin:60px auto 0;}
+    .review{background:white;padding:2.5rem;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:left;position:relative;}
+    .review::before{content:"“";font-family:'Playfair Display',serif;font-size:7rem;color:var(--gold);opacity:0.2;position:absolute;top:-20px;left:20px;}
+    .review p{font-style:italic;margin-bottom:1rem;color:#444;}
+    .reviewer{font-weight:600;color:var(--gold);}
+    .stars{color:#f39c12;margin-bottom:8px;}
+
+    .features{background:#fdfaf7;}
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px;max-width:1300px;margin:70px auto 0;}
+    .feature{background:white;padding:2.5rem;border-radius:20px;box-shadow:0 12px 35px rgba(0,0,0,0.09);text-align:center;}
+    .feature i{font-size:2.8rem;color:var(--gold);margin-bottom:1rem;}
+    .feature h3{color:var(--gold);font-size:1.6rem;margin:1rem 0 0.5rem;}
+
+    .map-section{background:#f8f4f0;padding:100px 5%;}
+    #map{height:500px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.15);}
+
+    .tips{background:var(--dark);color:#eee;padding:120px 5%;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1300px;margin:60px auto 0;}
+    .tip{background:rgba(255,255,255,0.08);padding:2rem;border-radius:16px;text-align:left;}
+
+    footer{background:var(--dark);color:#ccc;padding:70px 20px;text-align:center;}
+    footer a{color:var(--gold);text-decoration:none;}
+  </style>
+</head>
+<body>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/8562055910077?text=Hi!%20I%20saw%20Villa%20Visoun%20online%20Please%20send%20availability%20😊" 
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Villa Visoun</h1>
+      <p>Namkhan Riverview Infinity Pool Villa • Luang Prabang</p>
+      <a href="https://airbnb.com/h/villavisoun" class="btn" target="_blank" rel="noopener">Book on Airbnb</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>Wake Up to River and Small Boats Floating Past Your Infinity Pool</h2>
+    <p class="highlight">
+      Traditional Lao teak house fully renovated with private infinity pool, jacuzzi, and covered car park. 
+      Fully equipped kitchen, free airport transfer, train station transfer upon request, only 8 minutes walking distance to old town.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <img src="photo1.avif" alt="Villa Visoun exterior" loading="lazy">
+    <img src="photo2.avif" alt="Master bedroom" loading="lazy">
+    <img src="photo3.avif" alt="Infinity pool overlooking Nam Khan River" loading="lazy">
+    <img src="photo4.avif" alt="Open-plan living area" loading="lazy">
+    <img src="photo5.avif" alt="Fully equipped kitchen" loading="lazy">
+    <img src="photo6.avif" alt="Riverside dining area" loading="lazy">
+    <img src="photo7.avif" alt="Outdoor jacuzzi" loading="lazy">
+    <img src="photo8.avif" alt="Private covered car park" loading="lazy">
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h2>What Guests Say</h2>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“The view of the monks passing in the morning is pure magic. Best stay in Laos!”</p>
+        <div class="reviewer">— Marie & Tom, France</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“Immaculate villa, incredible host, free airport pickup, and that pool… we didn’t want to leave.”</p>
+        <div class="reviewer">— James, Australia</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“Peaceful, luxurious, and only 8 minutes from town. Breakfast on the river was a highlight every day.”</p>
+        <div class="reviewer">— Sophia, Singapore</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>Everything You Need</h2>
+    <div class="feature-grid">
+      <div class="feature"><i class="fas fa-infinity"></i><h3>Private Infinity Pool</h3><p>Riverside edge pool with Nam Khan view</p></div>
+      <div class="feature"><i class="fas fa-hot-tub"></i><h3>Outdoor Jacuzzi</h3><p>Relax under the stars</p></div>
+      <div class="feature"><i class="fas fa-car"></i><h3>Covered Parking</h3><p>Secure private parking</p></div>
+      <div class="feature"><i class="fas fa-utensils"></i><h3>Fully Equipped Kitchen</h3><p>Eastern and Western options</p></div>
+      <div class="feature"><i class="fas fa-plane"></i><h3>Free Airport Transfer</h3><p>Both ways included</p></div>
+      <div class="feature"><i class="fas fa-wifi"></i><h3>High-Speed Wi-Fi</h3><p>Fiber optic throughout</p></div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <h2>Location</h2>
+    <p style="max-width:800px;margin:20px auto;color:#666;">Just 8 minutes walk from Luang Prabang center, yet peacefully nestled on the banks of the Nam Khan River.</p>
+    <div id="map"></div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="tips">
+    <h2 style="color:#fff;">Good to Know</h2>
+    <div class="tips-grid">
+      <div class="tip"><h3>Best Time for Monk Procession</h3><p>Wake up at 5:30–6:00 AM to watch monks passing by in the old town — an unforgettable experience.</p></div>
+      <div class="tip"><h3>Getting Around</h3><p>We can arrange scooter or tuk-tuk rental, or private driver for the day.</p></div>
+      <div class="tip"><h3>Nearby Gems</h3><p>Kuang Si Falls (45 min), Pak Ou Caves (30 min boat), night market (8 min).</p></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Villa Visoun • Nam Khan Riverside • Luang Prabang, Laos</p>
+    <p><a href="https://wa.me/8562055910077" target="_blank">WhatsApp +856 20 55 910 077</a> • <a href="https://airbnb.com/h/villavisoun" target="_blank">Book on Airbnb</a></p>
+    <p>© 2025 Villa Visoun. All rights reserved.</p>
+  </footer>
+
+  <!-- Leaflet Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([19.8915, 102.147], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([19.8915, 102.147]).addTo(map)
+      .bindPopup('<b>Villa Visoun</b><br><a href="https://airbnb.com/h/villavisoun" target="_blank">Book Now</a>')
+      .openPopup();
+  </script>
+</body>
+</html>
