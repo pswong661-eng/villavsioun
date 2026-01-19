@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Private infinity pool villa on the Nam Khan River. Wake up to river and mountains. Instant booking via Airbnb or WhatsApp."/>
+  <meta name="description" content="Private infinity pool villa on the Nam Khan River, Luang Prabang. Wake up to river and mountains. Instant booking via Airbnb or WhatsApp."/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08YFXDE0GR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-08YFXDE0GR');
+</script>
   <title>Villa Visoun - Namkhan Riverview Pool Villa | Luang Prabang</title>
 
   <!-- Fonts -->
@@ -104,27 +112,27 @@
     <h2>Wake Up to River and Small Boats Floating Past Your Infinity Pool</h2>
     <p class="highlight">
       Traditional Lao teak house fully renovated with private infinity pool, jacuzzi, and covered car park. 
-      Fully equipped kitchen, free airport transfer, train station transfer upon request, only 8 minutes walking distance to old town.
+      Fully equipped kitchen, free airport transfer, train station transfer upon request, only 5 minutes walking distance to old town.
     </p>
   </section>
 
   <!-- GALLERY -->
   <section class="gallery">
-    <img src="photo1.avif" alt="Villa Visoun exterior" loading="lazy">
-    <img src="photo2.avif" alt="Master bedroom" loading="lazy">
-    <img src="photo3.avif" alt="Infinity pool overlooking Nam Khan River" loading="lazy">
-    <img src="photo4.avif" alt="Open-plan living area" loading="lazy">
-    <img src="photo5.avif" alt="Fully equipped kitchen" loading="lazy">
-    <img src="photo6.avif" alt="Riverside dining area" loading="lazy">
-    <img src="photo7.avif" alt="Outdoor jacuzzi" loading="lazy">
-    <img src="photo8.avif" alt="Private covered car park" loading="lazy">
+    <img src="photo1.avif" alt="Villa Visoun exterior" loading="lazy" decoding="async">
+    <img src="photo2.avif" alt="Master bedroom" loading="lazy" decoding="async">
+    <img src="photo3.avif" alt="Infinity pool overlooking Nam Khan River" loading="lazy" decoding="async">
+    <img src="photo4.avif" alt="Open-plan living area" loading="lazy" decoding="async">
+    <img src="photo5.avif" alt="Fully equipped kitchen" loading="lazy" decoding="async">
+    <img src="photo6.avif" alt="Riverside dining area" loading="lazy" decoding="async">
+    <img src="photo7.avif" alt="Outdoor jacuzzi" loading="lazy" decoding="async">
+    <img src="photo8.avif" alt="Private covered car park" loading="lazy" decoding="async">
   </section>
 <!-- YouTube Video Tour -->
 <section style="padding:80px 5%; background:#f8f4f0; text-align:center;">
   <h2 style="margin-bottom:1rem; color:var(--dark);">Virtual Tour: Peaceful Riverside Bliss</h2>
   <p style="max-width:800px; margin:0 auto 2rem; color:#666; font-size:1.1rem;">Take a serene walkthrough of our 5★ family villa – wake to river and mountain, splash in the infinity pool, and unwind in total tranquility.</p>
   <div style="position:relative; height:0; padding-bottom:56.25%; max-width:100%; margin:0 auto;">
-    <iframe src="https://www.youtube.com/embed/JMWDGAADTIk?si=jN_2J9ah81h4bYcF&autoplay=1&mute=1&loop=1&playlist=JMWDGAADTIk" 
+    <iframe src="https://www.youtube.com/embed/JMWDGAADTIk?si=jN_2J9ah81h4bYcF&autoplay=1&mute=1&loop=1&playlist=JMWDGAADTIk&rel=0" 
             style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:16px;" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
@@ -136,7 +144,7 @@
     <div class="review-grid">
       <div class="review">
         <div class="stars">★★★★★</div>
-        <p>“The view of the monks passing in the morning is pure magic. Best stay in Laos!”</p>
+        <p>“The view of the river and small boats passing in the morning is pure magic. Best stay in Laos!”</p>
         <div class="reviewer">— Marie & Tom, France</div>
       </div>
       <div class="review">
@@ -192,7 +200,7 @@
   <!-- Leaflet Map -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([19.8915, 102.147], 15);
+    const map = L.map('map').setView([19.887949, 102.140485], 16);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
@@ -200,8 +208,13 @@
       .bindPopup('<b>Villa Visoun</b><br><a href="https://airbnb.com/h/villavisoun" target="_blank">Book Now</a>')
       .openPopup();
   </script>
+
+  <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
-
 
 
