@@ -54,7 +54,8 @@
     "url": "https://www.villavisoun.com/",
     "sameAs": [
       "https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD",
-      "https://www.airbnb.com/s/guidebooks?refinement_paths%5B%5D=%2Fguidebooks%2F3248666&s=67&unique_share_id=964be24e-4ede-4fe0-a3bc-d9984ec4c50d"
+      "https://www.airbnb.com/s/guidebooks?refinement_paths%5B%5D=%2Fguidebooks%2F3248666&s=67&unique_share_id=964be24e-4ede-4fe0-a3bc-d9984ec4c50d",
+      "https://www.trip.com/hotels/detail/?hotelId=132861614"
     ],
     "hasMap": "https://maps.app.goo.gl/ATwfQqYV9UTGGgYCA",
     "telephone": "+856 20 55 910 077",
@@ -151,7 +152,7 @@
         "name": "How do I book Villa Visoun?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Book Villa Visoun through the official Airbnb listing or contact the villa directly on WhatsApp at +856 20 55 910 077."
+          "text": "Book Villa Visoun through Trip.com, the official Airbnb listing, or contact the villa directly on WhatsApp at +856 20 55 910 077."
         }
       },
       {
@@ -167,7 +168,7 @@
   </script>
 
   <style>
-    :root {--gold:#d4a373;--dark:#2c1e18;--cream:#faf6f2;--wa:#25d366;--muted:#6d625d;}
+    :root {--gold:#d4a373;--dark:#2c1e18;--cream:#faf6f2;--wa:#25d366;--trip:#287dfa;--muted:#6d625d;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;}
     h1,h2,h3{font-family:'Playfair Display',serif;color:var(--dark);}
@@ -188,6 +189,7 @@
     .btn{background:var(--gold);color:white;padding:1.1rem 2.6rem;border-radius:60px;font-size:1.15rem;font-weight:700;box-shadow:0 15px 40px rgba(212,163,115,0.5);transition:0.35s;display:inline-block;text-decoration:none;}
     .btn:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(212,163,115,0.6);}
     .btn.secondary{background:var(--wa);box-shadow:0 15px 40px rgba(37,211,102,0.35);}
+    .btn.trip{background:var(--trip);box-shadow:0 15px 40px rgba(40,125,250,0.4);}
     .hero-note{margin-top:1.1rem;font-size:0.92rem;opacity:0.85;font-weight:300;}
 
     section{padding:110px 5%;text-align:center;}
@@ -257,9 +259,10 @@
     footer .footer-links{margin:0.9rem auto;display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;}
 
     .sticky-book{display:none;position:fixed;left:0;right:0;bottom:0;z-index:999;background:rgba(44,30,24,0.97);backdrop-filter:blur(6px);padding:0.7rem 0.9rem;gap:0.6rem;box-shadow:0 -6px 24px rgba(0,0,0,0.35);}
-    .sticky-book a{flex:1;text-align:center;text-decoration:none;font-weight:700;border-radius:50px;padding:0.85rem 0.4rem;font-size:0.98rem;}
+    .sticky-book a{flex:1;text-align:center;text-decoration:none;font-weight:700;border-radius:50px;padding:0.85rem 0.3rem;font-size:0.88rem;}
     .sticky-book .b-airbnb{background:var(--gold);color:#fff;}
     .sticky-book .b-wa{background:var(--wa);color:#fff;}
+    .sticky-book .b-trip{background:var(--trip);color:#fff;}
     .sticky-book .sticky-rating{color:#cbb9a8;font-size:0.78rem;text-align:center;width:100%;margin-top:0.35rem;}
 
     @media (max-width:700px){
@@ -284,6 +287,7 @@
       <h1>Villa Visoun</h1>
       <p>Your private teak villa on the Nam Khan River &mdash; riverside veranda, jacuzzi &amp; sauna, minutes from Luang Prabang&rsquo;s UNESCO old town.</p>
       <div class="hero-actions">
+        <a href="https://www.trip.com/hotels/detail/?hotelId=132861614" class="btn trip" target="_blank" rel="noopener noreferrer" data-cta="hero-trip">Book on Trip.com</a>
         <a href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" class="btn" target="_blank" rel="noopener noreferrer" data-cta="hero-airbnb">Check Availability on Airbnb</a>
         <a href="https://wa.me/8562055910077?text=Hi!%20I%20saw%20Villa%20Visoun%20online.%20Please%20send%20availability." class="btn secondary" target="_blank" rel="noopener noreferrer" data-cta="hero-whatsapp">WhatsApp Us</a>
       </div>
@@ -421,7 +425,7 @@
         <div class="faq-item"><h3>Where is Villa Visoun located?</h3><p>Villa Visoun is located on the Nam Khan riverside in Luang Prabang, Laos, near the UNESCO old town area.</p></div>
         <div class="faq-item"><h3>Is Villa Visoun renovated?</h3><p>Yes. The villa is a traditional Lao teak house fully renovated for modern comfort, most recently with a new riverside coffee and tea veranda, plus an outdoor jacuzzi and sauna.</p></div>
         <div class="faq-item"><h3>Is airport transfer included?</h3><p>Yes. Free airport transfer is included, and train station transfer can be arranged on request.</p></div>
-        <div class="faq-item"><h3>How do I book Villa Visoun?</h3><p>You can book through the official Airbnb listing or message Villa Visoun directly on WhatsApp.</p></div>
+        <div class="faq-item"><h3>How do I book Villa Visoun?</h3><p>You can book on <a href="https://www.trip.com/hotels/detail/?hotelId=132861614" target="_blank" rel="noopener noreferrer">Trip.com</a>, through the official Airbnb listing, or message Villa Visoun directly on WhatsApp.</p></div>
         <div class="faq-item"><h3>What are the check-in and checkout times?</h3><p>Check-in is from 2:00 PM to 8:00 PM, and checkout is before 11:00 AM.</p></div>
       </div>
     </section>
@@ -430,6 +434,7 @@
       <h2>One of Luang Prabang&rsquo;s Most Loved Homes</h2>
       <p>4.98★ from 44 stays &middot; Superhost with 5 years of hosting &middot; Free airport pickup. Dates go fast in high season &mdash; check yours now.</p>
       <div class="hero-actions">
+        <a href="https://www.trip.com/hotels/detail/?hotelId=132861614" class="btn trip" target="_blank" rel="noopener noreferrer" data-cta="cta-band-trip">Book on Trip.com</a>
         <a href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" class="btn" target="_blank" rel="noopener noreferrer" data-cta="cta-band-airbnb">Check Availability on Airbnb</a>
         <a href="https://wa.me/8562055910077?text=Hi!%20I%20saw%20Villa%20Visoun%20online.%20Please%20send%20availability." class="btn secondary" target="_blank" rel="noopener noreferrer" data-cta="cta-band-whatsapp">Ask a Question First</a>
       </div>
@@ -443,6 +448,8 @@
       <span>&bull;</span>
       <a href="https://wa.me/8562055910077" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <span>&bull;</span>
+      <a href="https://www.trip.com/hotels/detail/?hotelId=132861614" target="_blank" rel="noopener noreferrer">Trip.com</a>
+      <span>&bull;</span>
       <a href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer">Official Airbnb</a>
       <span>&bull;</span>
       <a href="https://maps.app.goo.gl/ATwfQqYV9UTGGgYCA" target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -451,7 +458,8 @@
   </footer>
 
   <div class="sticky-book">
-    <a class="b-airbnb" href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer" data-cta="sticky-airbnb">Check Availability</a>
+    <a class="b-trip" href="https://www.trip.com/hotels/detail/?hotelId=132861614" target="_blank" rel="noopener noreferrer" data-cta="sticky-trip">Trip.com</a>
+    <a class="b-airbnb" href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer" data-cta="sticky-airbnb">Airbnb</a>
     <a class="b-wa" href="https://wa.me/8562055910077?text=Hi!%20I%20saw%20Villa%20Visoun%20online.%20Please%20send%20availability." target="_blank" rel="noopener noreferrer" data-cta="sticky-whatsapp">WhatsApp</a>
     <div class="sticky-rating">4.98★ Guest Favorite &middot; 44 reviews &middot; Superhost</div>
   </div>
@@ -465,7 +473,7 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
     L.marker(villaCoordinates).addTo(map)
-      .bindPopup('<b>Villa Visoun</b><br><a href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer">Book on Airbnb</a><br><a href="https://maps.app.goo.gl/ATwfQqYV9UTGGgYCA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>')
+      .bindPopup('<b>Villa Visoun</b><br><a href="https://www.trip.com/hotels/detail/?hotelId=132861614" target="_blank" rel="noopener noreferrer">Book on Trip.com</a><br><a href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer">Book on Airbnb</a><br><a href="https://maps.app.goo.gl/ATwfQqYV9UTGGgYCA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>')
       .openPopup();
   </script>
 
