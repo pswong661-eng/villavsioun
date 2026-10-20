@@ -8,13 +8,14 @@
 
   var SITE = {
     brand: 'Villa Visoun',
-    tagline: 'Nam Khan Riverview Retreat, Luang Prabang',
+    tagline: 'Traditional teak family villa near Old Town Luang Prabang',
     siteUrl: 'https://www.villavisoun.com/',
     canonical: 'https://www.villavisoun.com/',
     operator: 'Sounada Concept Sole Co. Ltd.',
     operatorLine: 'Villa Visoun is operated by Sounada Concept Sole Co. Ltd.',
     copyright: '\u00a9 2026 Villa Visoun. All rights reserved.',
-    locationLine: 'Villa Visoun \u2022 Nam Khan Riverside \u2022 Luang Prabang, Laos',
+    locationLine: 'Villa Visoun \u2022 Nam Khan Riverside \u2022 Near Old Town Luang Prabang, Laos',
+    // No verified streetAddress or postalCode — city/region only
     addressLocality: 'Luang Prabang',
     addressRegion: 'Luang Prabang Province',
     addressCountry: 'LA',
@@ -40,6 +41,7 @@
     checkin: '2:00 PM',
     checkinWindow: '2:00 PM to 8:00 PM',
     checkout: '11:00 AM',
+    petsAllowed: true,
     host: 'Superhost Eric',
     ogImage: 'https://www.villavisoun.com/og-hero.jpg',
     heroImage: 'https://www.villavisoun.com/hero.avif'
