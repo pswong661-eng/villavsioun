@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found | Villa Visoun, Luang Prabang</title>
+  <meta name="description" content="This page was not found. Return to Villa Visoun — private Nam Khan riverside villa in Luang Prabang — or check availability." />
   <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#2c1e18" />
+  <link rel="canonical" href="https://www.villavisoun.com/404.html" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {--gold:#d4a373;--dark:#2c1e18;--cream:#faf6f2;--wa:#25d366;}
+    :root {--gold:#d4a373;--dark:#2c1e18;--cream:#faf6f2;--mail:#5c6b7a;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;}
     .card{max-width:620px;}
@@ -18,7 +21,7 @@
     .btn{background:var(--gold);color:white;padding:0.95rem 2.1rem;border-radius:60px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px rgba(212,163,115,0.4);transition:0.3s;display:inline-block;}
     .btn:hover{transform:translateY(-4px);}
     .btn.ghost{background:transparent;color:var(--dark);border:2px solid var(--dark);box-shadow:none;}
-    .btn.wa{background:var(--wa);box-shadow:0 12px 30px rgba(37,211,102,0.35);}
+    .btn.mail{background:var(--mail);box-shadow:0 12px 30px rgba(92,107,122,0.35);}
     .hint{margin-top:2.4rem;font-size:0.92rem;color:#8a7d75;}
     .hint a{color:var(--gold);text-decoration:none;font-weight:600;}
     footer{margin-top:0.9rem;font-size:0.82rem;color:#8a7d75;}
@@ -28,14 +31,16 @@
   <div class="card">
     <div class="code">404</div>
     <h1>This page drifted down the Nam Khan</h1>
-    <p>The link you followed doesn't exist &mdash; but the riverside villa does. Head back to Villa Visoun, or check availability for your dates.</p>
+    <p>The link you followed doesn&rsquo;t exist &mdash; but the riverside villa does. Head back to Villa Visoun, or check availability for your dates.</p>
     <div class="actions">
-      <a class="btn ghost" href="/">Back to Villa Visoun</a>
-      <a class="btn" href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer">Check Availability</a>
-      <a class="btn wa" href="https://wa.me/8562055910077?text=Hi!%20I%20saw%20Villa%20Visoun%20online.%20Please%20send%20availability." target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+      <a class="btn ghost" href="/" data-vv-href="home">Back to Villa Visoun</a>
+      <a class="btn" href="https://www.airbnb.com/rooms/51207885?source_impression_id=p3_1784564821_P3p9fYojk3taNBdD" target="_blank" rel="noopener noreferrer" data-vv-href="airbnb">Check Availability</a>
+      <a class="btn mail" href="mailto:alcapone.ericio@agentmail.to?subject=Villa%20Visoun%20enquiry&body=Hi%2C%20I%20saw%20Villa%20Visoun%20online.%20Please%20send%20availability." data-vv-href="mailto">Email Us</a>
     </div>
     <div class="hint">4.98★ Guest Favorite on Airbnb &middot; 44 reviews &middot; Superhost Eric &middot; Free airport transfer</div>
-    <footer>Villa Visoun is operated by Sounada Concept Sole Co. Ltd.</footer>
+    <footer data-vv="operator">Villa Visoun is operated by Sounada Concept Sole Co. Ltd.</footer>
   </div>
+  <script src="js/site-content.js" defer></script>
+  <script src="js/site-chrome.js" defer></script>
 </body>
 </html>
