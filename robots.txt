@@ -18,3 +18,4 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://www.villavisoun.com/sitemap.xml
+Sitemap: https://www.villavisoun.com/sitemap.txt
