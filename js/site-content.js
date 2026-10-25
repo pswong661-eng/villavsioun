@@ -15,7 +15,8 @@
     operatorLine: 'Villa Visoun is operated by Sounada Concept Sole Co. Ltd.',
     copyright: '\u00a9 2026 Villa Visoun. All rights reserved.',
     locationLine: 'Villa Visoun \u2022 Nam Khan Riverside \u2022 Near Old Town Luang Prabang, Laos',
-    // No verified streetAddress or postalCode — city/region only
+    // streetAddress matches the Google Business Profile; no verified postalCode
+    streetAddress: 'Ban Visoun, Hom 2',
     addressLocality: 'Luang Prabang',
     addressRegion: 'Luang Prabang Province',
     addressCountry: 'LA',
